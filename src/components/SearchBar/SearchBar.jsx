@@ -1,4 +1,3 @@
-import React from 'react';
 import PokemonCard from '../PokemonCard/PokemonCard';
 const SearchBar = ({
 	setPokemon,

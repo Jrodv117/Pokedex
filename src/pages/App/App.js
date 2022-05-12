@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import axios from 'axios';
 import './App.css';
+import axios from 'axios';
+import Dashboard from '../Dashboard/Dashboard';
+import Details from '../Details/Details';
+import Landing from '../Landing/Landing';
+import NavBar from '../../components/NavBar/NavBar';
+import Register from '../Register/Resgister';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Landing from '../../components/LandingPage/LandingPage';
 
 const App = () => {
+	const [user, setUser] = useState(null);
 	const [pokemon, setPokemon] = useState('');
 	const [pokemonData, setPokemonData] = useState([]);
 	const [pokemonType, setPokemonType] = useState('');
@@ -30,15 +35,21 @@ const App = () => {
 
 	return (
 		<>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<div>Dashboard</div>} />
-					<Route path="/register" element={<div>Dashboard</div>} />
-					<Route path="/landing" element={<Landing />} />
-				</Routes>
-			</BrowserRouter>
+			<main>
+				{user ? (
+					<>
+						<NavBar />
+						<Routes>
+							<Route path="/" element={<Dashboard />} />
+							<Route path="/details" element={<Details />} />
+						</Routes>
+					</>
+				) : (
+					<Register />
+				)}
+			</main>
+			<h1>Pokedex</h1>
 			<div className="App">
-				<h1>Pokedex</h1>
 				<SearchBar
 					pokemon={pokemon}
 					setPokemon={setPokemon}
