@@ -2,11 +2,10 @@ import './App.css';
 import axios from 'axios';
 import Dashboard from '../Dashboard/Dashboard';
 import Details from '../Details/Details';
-import Landing from '../Landing/Landing';
 import NavBar from '../../components/NavBar/NavBar';
-import Register from '../Register/Resgister';
+import Register from '../Register/Register';
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
 const App = () => {
@@ -34,31 +33,30 @@ const App = () => {
 	};
 
 	return (
-		<>
-			<main>
-				{user ? (
-					<>
-						<NavBar />
-						<Routes>
-							<Route path="/" element={<Dashboard />} />
-							<Route path="/details" element={<Details />} />
-						</Routes>
-					</>
-				) : (
-					<Register />
-				)}
-			</main>
-			<h1>Pokedex</h1>
-			<div className="App">
-				<SearchBar
-					pokemon={pokemon}
-					setPokemon={setPokemon}
-					getPokemon={getPokemon}
-					pokemonType={pokemonType}
-					pokemonData={pokemonData}
-				/>
-			</div>
-		</>
+		<main>
+			{user ? (
+				<>
+					<NavBar />
+					<Routes>
+						<Route
+							path="/dashboard"
+							element={
+								<Dashboard
+									pokemon={pokemon}
+									pokemonData={pokemonData}
+									pokemonType={pokemonType}
+									getPokemon={getPokemon}
+									setPokemon={setPokemon}
+								/>
+							}
+						/>
+						<Route path="/details" element={<Details />} />
+					</Routes>
+				</>
+			) : (
+				<Register />
+			)}
+		</main>
 	);
 };
 
