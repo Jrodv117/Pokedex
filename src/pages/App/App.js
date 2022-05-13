@@ -2,14 +2,14 @@ import './App.css';
 import axios from 'axios';
 import Dashboard from '../Dashboard/Dashboard';
 import Details from '../Details/Details';
+import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import Register from '../Register/Register';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SearchBar from '../../components/SearchBar/SearchBar';
 
 const App = () => {
-	const [user, setUser] = useState(null);
+	const [user, setUser] = useState(getUser());
 	const [pokemon, setPokemon] = useState('');
 	const [pokemonData, setPokemonData] = useState([]);
 	const [pokemonType, setPokemonType] = useState('');
@@ -36,10 +36,10 @@ const App = () => {
 		<main>
 			{user ? (
 				<>
-					<NavBar />
+					<NavBar user={user} setUser={setUser} />
 					<Routes>
 						<Route
-							path="/dashboard"
+							path="/"
 							element={
 								<Dashboard
 									pokemon={pokemon}
@@ -54,7 +54,7 @@ const App = () => {
 					</Routes>
 				</>
 			) : (
-				<Register />
+				<Register setUser={setUser} />
 			)}
 		</main>
 	);

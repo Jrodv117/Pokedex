@@ -1,11 +1,23 @@
 import { Link } from 'react-router-dom';
-const NavBar = () => {
+import * as userService from '../../utilities/users-service';
+
+export default function NavBar({ user, setUser }) {
+	function handleLogOut() {
+		userService.logOut();
+		setUser(null);
+	}
 	return (
 		<nav>
-			<Link to="/dashboard">Dashboard</Link>
+			<Link to="/">Dashboard</Link>
 			&nbsp; | &nbsp;
 			<Link to="/details">Details</Link>
+			&nbsp; | &nbsp;
+			<span> Welcome, {user.name} </span>
+			{console.log(user)}
+			&nbsp; | &nbsp;
+			<Link to="" onClick={handleLogOut}>
+				Log Out
+			</Link>
 		</nav>
 	);
-};
-export default NavBar;
+}

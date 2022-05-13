@@ -1,9 +1,9 @@
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
-const Register = () => {
+const Register = ({ setUser }) => {
 	return (
 		<main>
 			<h1>Register</h1>
-			<RegisterForm />
+			<RegisterForm setUser={setUser} />
 		</main>
 	);
 };
