@@ -1,13 +1,24 @@
 import { Link } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 import * as userService from '../../utilities/users-service';
 
-export default function NavBar({ user, setUser }) {
+// const navBarStyle = styled.nav`
+// `
+const NavBar = ({
+	user,
+	setUser,
+	pokemon,
+	pokemonType,
+	pokemonData,
+	setPokemon,
+	getPokemon,
+}) => {
 	function handleLogOut() {
 		userService.logOut();
 		setUser(null);
 	}
 	return (
-		<nav>
+		<nav className="navbar navbar-expand-md navbar-dark">
 			<Link to="/">Dashboard</Link>
 			&nbsp; | &nbsp;
 			<Link to="/details">Details</Link>
@@ -18,6 +29,15 @@ export default function NavBar({ user, setUser }) {
 			<Link to="" onClick={handleLogOut}>
 				Log Out
 			</Link>
+			<SearchBar
+				pokemon={pokemon}
+				setPokemon={setPokemon}
+				getPokemon={getPokemon}
+				pokemonType={pokemonType}
+				pokemonData={pokemonData}
+			/>
 		</nav>
 	);
-}
+};
+
+export default NavBar;

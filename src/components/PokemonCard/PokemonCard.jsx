@@ -1,37 +1,16 @@
-const PokemonCard = ({ pokemonData, pokemonType }) => {
+const PokemonCard = ({ pokemon }) => {
 	return (
-		<>
-			{pokemonData.map((data) => {
-				return (
-					<div className="container">
-						<img src={data.sprites['front_default']} />
-						<div className="pokeTable">
-							<div className="pokeTableBody"></div>
-							<div className="divTableRow">
-								<div className="divTableCell">Type</div>
-								<div className="divTableCell">{pokemonType}</div>
-								<div className="divTableCell">{data.moves[0].move.name}</div>
-							</div>
-							<div className="divTableRow">
-								<div className="divTableCell">Height</div>
-								<div className="divTableCell">
-									{data.height}
-									{'ft'}
-								</div>
-							</div>
-							<div className="divTableRow">
-								<div className="divTableCell">Weight</div>
-								<div className="divTableCell">
-									{data.weight}
-									{'ibs'}
-								</div>
-							</div>
-						</div>
-					</div>
-				);
-			})}
-		</>
+		<div className="col-md-3 col-sm-6 mb-5">
+			<div className="card">
+				<h1 className="card-header">{pokemon.id}</h1>
+				<div className="card-img-top rounded mt-1">
+					<img src={pokemon.sprites['front_default']} />
+				</div>
+				<div className="card-body">
+					<h5>{pokemon.name}</h5>
+				</div>
+			</div>
+		</div>
 	);
 };
-
 export default PokemonCard;

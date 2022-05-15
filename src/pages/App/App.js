@@ -1,5 +1,6 @@
 import './App.css';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from '../Dashboard/Dashboard';
 import Details from '../Details/Details';
 import { getUser } from '../../utilities/users-service';
@@ -36,22 +37,32 @@ const App = () => {
 		<main>
 			{user ? (
 				<>
-					<NavBar user={user} setUser={setUser} />
-					<Routes>
-						<Route
-							path="/"
-							element={
-								<Dashboard
-									pokemon={pokemon}
-									pokemonData={pokemonData}
-									pokemonType={pokemonType}
-									getPokemon={getPokemon}
-									setPokemon={setPokemon}
-								/>
-							}
-						/>
-						<Route path="/details" element={<Details />} />
-					</Routes>
+					<NavBar
+						user={user}
+						setUser={setUser}
+						pokemon={pokemon}
+						pokemonData={pokemonData}
+						pokemonType={pokemonType}
+						getPokemon={getPokemon}
+						setPokemon={setPokemon}
+					/>
+					<div className="App">
+						<Routes>
+							<Route
+								path="/"
+								element={
+									<Dashboard
+										pokemon={pokemon}
+										pokemonData={pokemonData}
+										pokemonType={pokemonType}
+										getPokemon={getPokemon}
+										setPokemon={setPokemon}
+									/>
+								}
+							/>
+							<Route path="/details" element={<Details />} />
+						</Routes>
+					</div>
 				</>
 			) : (
 				<Register setUser={setUser} />

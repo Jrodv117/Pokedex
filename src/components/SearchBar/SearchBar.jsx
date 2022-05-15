@@ -1,4 +1,4 @@
-import PokemonCard from '../PokemonCard/PokemonCard';
+import PokemonCardSearch from '../PokemonCardSearch/PokemonCardSearch';
 const SearchBar = ({
 	setPokemon,
 	getPokemon,
@@ -29,7 +29,7 @@ const SearchBar = ({
 				</label>
 				<button>Get Pokemon</button>
 			</form>
-			<PokemonCard pokemonType={pokemonType} pokemonData={pokemonData} />
+			<PokemonCardSearch pokemonType={pokemonType} pokemonData={pokemonData} />
 		</div>
 	);
 };
