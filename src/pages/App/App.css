@@ -16,3 +16,19 @@
 	margin-left: 2rem !important;
 	margin-right: 2rem !important;
 }
+
+.form-container {
+	position: absolute;
+	top: 15vh;
+	background: rgba(0, 0, 0, 0.648);
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.779);
+}
+
+.bg {
+	background-image: url(../../../public/images/My\ project.jpg);
+	width: 100%;
+	height: 100vh;
+	background-size: 100%;
+}
