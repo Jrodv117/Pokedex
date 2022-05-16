@@ -18,17 +18,50 @@
 }
 
 .form-container {
-	position: absolute;
-	top: 15vh;
+	position: relative;
+	height: 25rem;
+	top: 3.9vh;
 	background: rgba(0, 0, 0, 0.648);
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.779);
+	margin: auto;
+	top: 60%;
+	left: 80%;
 }
 
 .bg {
-	background-image: url(../../../public/images/My\ project.jpg);
-	width: 100%;
+	background-image: url(../../../public/images/Myproject.jpeg);
 	height: 100vh;
-	background-size: 100%;
+	background-size: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.h3 {
+	background-color: rgb(290, 180, 10);
+	margin-bottom: 0 !important;
+	text-align: center;
+	border-bottom: 0;
+}
+
+.pcard {
+	margin-top: 3rem;
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	background-color: rgb(214, 55, 44) !important;
+	outline: none !important;
+	border-color: none !important;
+}
+
+.btn-primary {
+	border-color: none !important;
+}
+
+.form-text {
+	color: black !important;
+	font-weight: bold;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import { Link } from 'react-router-dom';
 
 export default function LoginForm({ setUser }) {
 	const [credentials, setCredentials] = useState({
@@ -25,23 +26,26 @@ export default function LoginForm({ setUser }) {
 	}
 
 	return (
-		<div className="container-fluid" onSubmit={handleSubmit}>
+		<div className="container-fluid bg" onSubmit={handleSubmit}>
 			<div className="row">
-				<div className="col-12 col-sm-6 col-md-3">
-					<form autoComplete="off" autoCapitalize="off">
-						<label>Email</label>
+				<div className="col-12 col-sm-7 col-md-3">
+					<form
+						autoComplete="off"
+						className="form-container"
+						onSubmit={handleSubmit}
+					>
+						<label className="form-text">Email</label>
 						<input
+							className="form-control"
 							type="text"
 							name="email"
 							value={credentials.email}
 							onChange={handleChange}
 							required
 						/>
-						<small id="emailHelp" class="form-text text-muted">
-							We'll never share your email with anyone else.
-						</small>
-						;<label>Password</label>
+						<label className="form-text">Password</label>
 						<input
+							className="form-control"
 							type="password"
 							name="password"
 							value={credentials.password}
@@ -50,6 +54,8 @@ export default function LoginForm({ setUser }) {
 						/>
 						<button type="submit">LOG IN</button>
 					</form>
+
+					<p className="error-message">&nbsp;{error}</p>
 				</div>
 			</div>
 		</div>

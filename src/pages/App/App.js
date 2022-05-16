@@ -15,10 +15,14 @@ const App = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 	const [pokemonType, setPokemonType] = useState('');
 
+	//getPokemon is a function that leveradges axios to return data from pokemom api
 	const getPokemon = async () => {
 		const toArray = [];
 		try {
+			//saving url to a variable so i dont have to retype it
 			const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+			// fetching using axios library to make async request from api
+			// just like using fetch from browser but more simple
 			const res = await axios.get(url);
 			//uses push() to add res data to our array
 			toArray.push(res.data);
@@ -37,15 +41,7 @@ const App = () => {
 		<main>
 			{user ? (
 				<>
-					<NavBar
-						user={user}
-						setUser={setUser}
-						pokemon={pokemon}
-						pokemonData={pokemonData}
-						pokemonType={pokemonType}
-						getPokemon={getPokemon}
-						setPokemon={setPokemon}
-					/>
+					<NavBar user={user} setUser={setUser} />
 					<div className="App">
 						<Routes>
 							<Route

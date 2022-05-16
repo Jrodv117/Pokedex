@@ -4,15 +4,7 @@ import * as userService from '../../utilities/users-service';
 
 // const navBarStyle = styled.nav`
 // `
-const NavBar = ({
-	user,
-	setUser,
-	pokemon,
-	pokemonType,
-	pokemonData,
-	setPokemon,
-	getPokemon,
-}) => {
+const NavBar = ({ user, setUser }) => {
 	function handleLogOut() {
 		userService.logOut();
 		setUser(null);
@@ -29,13 +21,6 @@ const NavBar = ({
 			<Link to="" onClick={handleLogOut}>
 				Log Out
 			</Link>
-			<SearchBar
-				pokemon={pokemon}
-				setPokemon={setPokemon}
-				getPokemon={getPokemon}
-				pokemonType={pokemonType}
-				pokemonData={pokemonData}
-			/>
 		</nav>
 	);
 };

@@ -3,6 +3,7 @@ import { getAllPokemon, getPokemon } from '../../utilities/pokemon';
 import PokemonCard from '../PokemonCard/PokemonCard';
 const PokemonList = () => {
 	const [allPokemon, setallPokemonData] = useState([]);
+	const [currentUrl, setCurrentUrl] = useState();
 	const [nextUrl, setNextUrl] = useState('');
 	const [prevUrl, setPrevUrl] = useState('');
 	const [loading, setLoading] = useState('');

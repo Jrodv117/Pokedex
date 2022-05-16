@@ -2,7 +2,7 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import { useState } from 'react';
 
-const Register = ({ setUser }) => {
+const RegisterComponent = ({ setUser }) => {
 	const [currentForm, setCurrentForm] = useState('login');
 
 	function handleClick() {
@@ -32,4 +32,4 @@ const Register = ({ setUser }) => {
 		</main>
 	);
 };
-export default Register;
+export default RegisterComponent;
