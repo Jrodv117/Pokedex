@@ -6,7 +6,7 @@ import Details from '../Details/Details';
 import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import Register from '../Register/Register';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -19,19 +19,15 @@ const App = () => {
 	const getPokemon = async () => {
 		const toArray = [];
 		try {
-			//saving url to a variable so i dont have to retype it
+			//saving url to a variable
 			const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-			// fetching using axios library to make async request from api
 			// just like using fetch from browser but more simple
 			const res = await axios.get(url);
-			//uses push() to add res data to our array
+			//uses push() to add res data to array
 			toArray.push(res.data);
-			console.log(res.data);
 			//gets the type from data in res
 			setPokemonType(res.data.types[0].type.name);
 			setPokemonData(toArray);
-			console.log(res.data.types[0].type.name);
-			console.log(res);
 		} catch (error) {
 			console.log(error);
 		}

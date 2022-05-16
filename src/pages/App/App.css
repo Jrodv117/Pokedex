@@ -65,3 +65,16 @@
 	color: black !important;
 	font-weight: bold;
 }
+
+.type {
+	display: inline-block;
+	padding: 5px;
+}
+
+.abilities {
+	padding-top: 5px;
+}
+
+.card-text {
+	margin: 0;
+}

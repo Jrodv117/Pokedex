@@ -8,6 +8,16 @@ const PokemonCard = ({ pokemon }) => {
 				</div>
 				<div className="card-body">
 					<h5>{pokemon.name}</h5>
+					<div className="card-header">
+						<p className="card-text">Type:</p>
+						{pokemon.types.map((type) => {
+							return <div className="type">{type.type.name}</div>;
+						})}
+						<div className="abilities">
+							<p className="card-text">Ability:</p>
+							{pokemon.abilities[0].ability.name}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

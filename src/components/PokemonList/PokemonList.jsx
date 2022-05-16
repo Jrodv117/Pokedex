@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllPokemon, getPokemon } from '../../utilities/pokemon';
+import Pagination from '../Pagination/Pagination';
 import PokemonCard from '../PokemonCard/PokemonCard';
 const PokemonList = () => {
 	const [allPokemon, setallPokemonData] = useState([]);
@@ -15,25 +16,44 @@ const PokemonList = () => {
 			setNextUrl(response.next);
 			setPrevUrl(response.previous);
 			let rest = await loadingPokemon(response.results);
-			console.log(rest);
 			setLoading(false);
 		}
 		fetchData();
 	}, []);
 
+	const next = async () => {
+		setLoading(true);
+		let data = await getAllPokemon(nextUrl);
+		await loadingPokemon(data.results);
+		setNextUrl(data.next);
+		setPrevUrl(data.previous);
+		setLoading(false);
+	};
+
+	const prev = async () => {
+		if (!prevUrl) return;
+		setLoading(true);
+		let data = await getAllPokemon(prevUrl);
+		await loadingPokemon(data.results);
+		setNextUrl(data.next);
+		setPrevUrl(data.previous);
+		setLoading(false);
+	};
+
 	const loadingPokemon = async (data) => {
 		let _pokemon = await Promise.all(
 			data.map(async (pokemon) => {
 				let pokemonRecord = await getPokemon(pokemon.url);
+				console.log(pokemonRecord);
 				return pokemonRecord;
 			})
 		);
 		setallPokemonData(_pokemon);
 	};
-	console.log(allPokemon);
 
 	return (
 		<div>
+			<Pagination prev={prev} next={next} />
 			{loading ? (
 				<h1>loading...</h1>
 			) : (

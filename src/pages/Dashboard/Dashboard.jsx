@@ -17,6 +17,7 @@ const Dashboard = ({
 					pokemonType={pokemonType}
 					pokemonData={pokemonData}
 				/>
+				<pagination />
 				<PokemonList />
 			</div>
 		</div>
