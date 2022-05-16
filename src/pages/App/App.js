@@ -2,12 +2,12 @@ import './App.css';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from '../Dashboard/Dashboard';
-import Details from '../Details/Details';
 import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import Register from '../Register/Register';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Pagination from '../../components/Pagination/Pagination';
 
 const App = () => {
 	const [user, setUser] = useState(getUser());
@@ -52,7 +52,6 @@ const App = () => {
 									/>
 								}
 							/>
-							<Route path="/details" element={<Details />} />
 						</Routes>
 					</div>
 				</>

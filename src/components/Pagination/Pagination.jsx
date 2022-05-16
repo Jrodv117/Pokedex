@@ -1,8 +1,12 @@
 const Pagination = ({ prev, next }) => {
 	return (
 		<div>
-			<button onClick={prev}>Previous</button>
-			<button onClick={next}>Next</button>
+			<button className="btn btn-primary btn-lg btn-block pbtn" onClick={prev}>
+				Previous
+			</button>
+			<button className="btn btn-primary btn-lg btn-block pbtn" onClick={next}>
+				Next
+			</button>
 		</div>
 	);
 };

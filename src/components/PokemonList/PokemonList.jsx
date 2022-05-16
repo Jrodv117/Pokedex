@@ -53,7 +53,6 @@ const PokemonList = () => {
 
 	return (
 		<div>
-			<Pagination prev={prev} next={next} />
 			{loading ? (
 				<h1>loading...</h1>
 			) : (
@@ -62,6 +61,7 @@ const PokemonList = () => {
 						{allPokemon.map((pokemon, i) => {
 							return <PokemonCard key={i} pokemon={pokemon} />;
 						})}
+						<Pagination prev={prev} next={next} />
 					</div>
 				</>
 			)}

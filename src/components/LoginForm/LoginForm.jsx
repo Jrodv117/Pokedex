@@ -31,7 +31,7 @@ export default function LoginForm({ setUser }) {
 				<div className="col-12 col-sm-7 col-md-3">
 					<form
 						autoComplete="off"
-						className="form-container"
+						className="form-container fbg"
 						onSubmit={handleSubmit}
 					>
 						<label className="form-text">Email</label>
@@ -52,7 +52,9 @@ export default function LoginForm({ setUser }) {
 							onChange={handleChange}
 							required
 						/>
-						<button type="submit">LOG IN</button>
+						<button className="btn btn-primary btn-lg btn-block" type="submit">
+							LOG IN
+						</button>
 					</form>
 
 					<p className="error-message">&nbsp;{error}</p>

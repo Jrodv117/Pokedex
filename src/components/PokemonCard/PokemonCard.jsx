@@ -1,19 +1,27 @@
+import typeColors from '../../utilities/colorTypes';
+
 const PokemonCard = ({ pokemon }) => {
 	return (
 		<div className="col-md-3 col-sm-6 mb-5">
 			<div className="card">
 				<h1 className="card-header">{pokemon.id}</h1>
-				<div className="card-img-top rounded mt-1">
+				<div className="card-img-top rounded mt-1 pokemonimg">
 					<img src={pokemon.sprites['front_default']} />
 				</div>
 				<div className="card-body">
 					<h5>{pokemon.name}</h5>
-					<div className="card-header">
-						<p className="card-text">Type:</p>
+					<div>
 						{pokemon.types.map((type) => {
-							return <div className="type">{type.type.name}</div>;
+							return (
+								<div
+									className="type"
+									style={{ backgroundColor: typeColors[type.type.name] }}
+								>
+									{type.type.name}
+								</div>
+							);
 						})}
-						<div className="abilities">
+						<div className="card-header abilities">
 							<p className="card-text">Ability:</p>
 							{pokemon.abilities[0].ability.name}
 						</div>

@@ -10,18 +10,20 @@ const NavBar = ({ user, setUser }) => {
 		setUser(null);
 	}
 	return (
-		<nav className="navbar navbar-expand-md navbar-dark">
-			<Link to="/">Dashboard</Link>
-			&nbsp; | &nbsp;
-			<Link to="/details">Details</Link>
-			&nbsp; | &nbsp;
-			<span> Welcome, {user.name} </span>
-			{console.log(user)}
-			&nbsp; | &nbsp;
-			<Link to="" onClick={handleLogOut}>
-				Log Out
-			</Link>
-		</nav>
+		<div className="NavBarDiv">
+			<nav className="navbar navbar-expand-md navbar-dark">
+				<Link to="/" className="link">
+					Dashboard
+				</Link>
+				&nbsp; | &nbsp;
+				<span> Pokemon Trainer: {user.name} </span>
+				{console.log(user)}
+				&nbsp; | &nbsp;
+				<Link to="" className="link" onClick={handleLogOut}>
+					Log Out
+				</Link>
+			</nav>
+		</div>
 	);
 };
 

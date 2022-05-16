@@ -27,7 +27,7 @@ const SearchBar = ({
 						placeholder="Search for a Pokemon"
 					/>
 				</label>
-				<button>Get Pokemon</button>
+				<button className="btn btn-block sbtn">Get Pokemon</button>
 			</form>
 			<PokemonCardSearch pokemonType={pokemonType} pokemonData={pokemonData} />
 		</div>

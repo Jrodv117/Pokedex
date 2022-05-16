@@ -8,17 +8,18 @@ const Dashboard = ({
 	getPokemon,
 }) => {
 	return (
-		<div className="row">
-			<div className="col">
-				<SearchBar
-					pokemon={pokemon}
-					setPokemon={setPokemon}
-					getPokemon={getPokemon}
-					pokemonType={pokemonType}
-					pokemonData={pokemonData}
-				/>
-				<pagination />
-				<PokemonList />
+		<div className="dash">
+			<div className="row">
+				<div className="col">
+					<SearchBar
+						pokemon={pokemon}
+						setPokemon={setPokemon}
+						getPokemon={getPokemon}
+						pokemonType={pokemonType}
+						pokemonData={pokemonData}
+					/>
+					<PokemonList />
+				</div>
 			</div>
 		</div>
 	);
