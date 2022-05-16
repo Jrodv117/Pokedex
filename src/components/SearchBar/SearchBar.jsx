@@ -18,7 +18,7 @@ const SearchBar = ({
 	};
 
 	return (
-		<div>
+		<div className="searchbarform">
 			<form onSubmit={handleSubmit}>
 				<label>
 					<input
@@ -27,7 +27,7 @@ const SearchBar = ({
 						placeholder="Search for a Pokemon"
 					/>
 				</label>
-				<button className="btn btn-block sbtn">Get Pokemon</button>
+				<button className="btn btn-block searchbarbutton">Get Pokemon</button>
 			</form>
 			<PokemonCardSearch pokemonType={pokemonType} pokemonData={pokemonData} />
 		</div>

@@ -7,7 +7,6 @@ import NavBar from '../../components/NavBar/NavBar';
 import Register from '../Register/Register';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Pagination from '../../components/Pagination/Pagination';
 
 const App = () => {
 	const [user, setUser] = useState(getUser());

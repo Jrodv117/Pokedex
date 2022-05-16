@@ -17,6 +17,9 @@
 	margin-right: 2rem !important;
 }
 
+.searchbarform {
+	margin-bottom: 20px;
+}
 .form-container {
 	position: relative;
 	height: 25rem;
@@ -99,7 +102,9 @@
 .dash {
 	display: flex;
 }
-.pbtns {
-	align-self: flex-end !important;
-	margin-top: auto;
+
+.searchbarbutton {
+	margin-left: 7px !important;
+	padding: 5px !important;
+	padding-bottom: 2px !important;
 }
